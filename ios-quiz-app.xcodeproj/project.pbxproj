@@ -16,6 +16,7 @@
 		863F788F2D8A089800018894 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F788E2D8A089800018894 /* QuestionModel.swift */; };
 		863F78932D8A130200018894 /* QuestionBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F78922D8A130200018894 /* QuestionBankViewController.swift */; };
 		863F78952D8A1CC900018894 /* QuestionBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F78942D8A1CC900018894 /* QuestionBuilderViewController.swift */; };
+		864E3F512D9335CB00C17F10 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E3F502D9335CB00C17F10 /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		863F788E2D8A089800018894 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		863F78922D8A130200018894 /* QuestionBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBankViewController.swift; sourceTree = "<group>"; };
 		863F78942D8A1CC900018894 /* QuestionBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBuilderViewController.swift; sourceTree = "<group>"; };
+		864E3F502D9335CB00C17F10 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				863F788E2D8A089800018894 /* QuestionModel.swift */,
 				863F78922D8A130200018894 /* QuestionBankViewController.swift */,
 				863F78942D8A1CC900018894 /* QuestionBuilderViewController.swift */,
+				864E3F502D9335CB00C17F10 /* QuizViewController.swift */,
 			);
 			path = "ios-quiz-app";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				863F787F2D8A03A800018894 /* ViewController.swift in Sources */,
+				864E3F512D9335CB00C17F10 /* QuizViewController.swift in Sources */,
 				863F787B2D8A03A800018894 /* AppDelegate.swift in Sources */,
 				863F787D2D8A03A800018894 /* SceneDelegate.swift in Sources */,
 				863F78932D8A130200018894 /* QuestionBankViewController.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 protocol AddingNewQuestionDelegate {
     func addingNewQuestionDidFinishWithResult(newQuestion: Question)
     func addingNewQuestionDidCancel()
+    
+    func editingQuestionDidFinish()
 }
 
 class QuestionBankViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, AddingNewQuestionDelegate {
@@ -43,6 +45,12 @@ class QuestionBankViewController: UIViewController,UITableViewDelegate, UITableV
 
     }
     
+    func editingQuestionDidFinish() {
+        DispatchQueue.main.async {
+            self.questionsTable.reloadData()
+        }
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1
@@ -73,10 +81,31 @@ class QuestionBankViewController: UIViewController,UITableViewDelegate, UITableV
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "questionBuilder" {
-            if let addQuestionVC = segue.destination as? QuestionBuilderViewController {
-                addQuestionVC.delegate = self
+        if segue.identifier == "questionBuilder",
+           let addQuestionVC = segue.destination as? QuestionBuilderViewController {
+            addQuestionVC.delegate = self
+
+            // Check if sender is a table cell (meaning the user selected a question to edit)
+            if let cell = sender as? UITableViewCell,
+               let indexPath = questionsTable.indexPath(for: cell) {
+                // Editing a question
+                addQuestionVC.editingQuestion = quiz?.questions[indexPath.row]
+                addQuestionVC.editingIndex = indexPath.row
+            } else {
+                // Adding a new question, Ensure the form is empty
+                addQuestionVC.editingQuestion = nil
+                addQuestionVC.editingIndex = nil
             }
         }
     }
+
+
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "questionBuilder", sender: cell)
+    }
+
+    
+    
 }

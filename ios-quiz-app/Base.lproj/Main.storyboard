@@ -50,18 +50,75 @@
         <!--My Quiz-->
         <scene sceneID="Byj-YM-Cja">
             <objects>
-                <viewController title="My Quiz" id="Q7d-4T-Fsp" sceneMemberID="viewController">
+                <viewController title="My Quiz" id="Q7d-4T-Fsp" customClass="QuizViewController" customModule="ios_quiz_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTa-Yt-1w8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-dO-s4X">
+                                <rect key="frame" x="108" y="703" width="150" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03D-hO-T1A">
+                                <rect key="frame" x="45" y="331" width="302" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="answerSelected:" destination="Q7d-4T-Fsp" eventType="touchUpInside" id="wZE-tW-2EW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Si-sP-DcM">
+                                <rect key="frame" x="45" y="401" width="302" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="answerSelected:" destination="Q7d-4T-Fsp" eventType="touchUpInside" id="2kN-bv-lwf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2L-9G-kG8">
+                                <rect key="frame" x="45" y="472" width="302" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="answerSelected:" destination="Q7d-4T-Fsp" eventType="touchUpInside" id="kLj-0B-Qmf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-ew-O65">
+                                <rect key="frame" x="45" y="538" width="302" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="answerSelected:" destination="Q7d-4T-Fsp" eventType="touchUpInside" id="7i3-1J-STt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFT-ge-r6P">
+                                <rect key="frame" x="16" y="156" width="361" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gwL-kr-KBF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Quiz" id="zoR-GH-3Cb"/>
+                    <connections>
+                        <outlet property="progressBar" destination="xQ0-dO-s4X" id="FJN-nc-qHT"/>
+                        <outlet property="questionLabel" destination="WFT-ge-r6P" id="xky-Yk-d3a"/>
+                        <outletCollection property="answerButtons" destination="03D-hO-T1A" collectionClass="NSMutableArray" id="wzk-vO-IAX"/>
+                        <outletCollection property="answerButtons" destination="0Si-sP-DcM" collectionClass="NSMutableArray" id="BMV-AX-Lce"/>
+                        <outletCollection property="answerButtons" destination="E2L-9G-kG8" collectionClass="NSMutableArray" id="4Tx-3q-IaY"/>
+                        <outletCollection property="answerButtons" destination="6f0-ew-O65" collectionClass="NSMutableArray" id="0x2-Ox-jSb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROg-47-HnK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="704"/>
+            <point key="canvasLocation" x="1006.8702290076335" y="703.52112676056345"/>
         </scene>
         <!--Question Bank-->
         <scene sceneID="giE-96-BhE">
@@ -136,6 +193,9 @@
                                     <navigationItem title="Question Builder" style="browser" id="f0B-12-bhC">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JnD-R3-M0c">
                                             <color key="tintColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="cancelButtonClicked:" destination="DV4-yv-LXL" id="Phv-v6-4iq"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uBI-GA-l8h">
                                             <color key="tintColor" name="AccentColor"/>
